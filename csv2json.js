@@ -38,3 +38,5 @@ const output = csv2json(input);
 assert(typeof output === 'string'); // test that the output is a string
 assert(typeof output === typeof solution); // test that types match
 assert(output === solution); // test that values match
+
+fs.writeFileSync('./customer-data.json', output);
