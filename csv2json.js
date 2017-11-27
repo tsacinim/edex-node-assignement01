@@ -27,10 +27,10 @@ const csv2json = input => {
    
   output = outputRow.map(row2object); // process all file content
   output = JSON.stringify(output, null, 2); // convert to string for testing
-  return output;
+  return output.replace(/\r?\n|\r/g,'\n'); // normalize line endings;
 };
 
-const output = csv2json(input);
+const output = csv2json(input) + '\n';
 
 // console.log(output);
 // console.log(solution);
